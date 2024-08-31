@@ -1,0 +1,14 @@
+listen:
+  host: 127.0.0.1
+  port: 8080
+
+db:
+  db_name: postgres
+  host: 127.0.0.1
+  port: 5432 
+  username: postgres
+  password: postgres
+  ssl_mode: disable
+
+base_url:
+  bank_url: https://66d235e262816af9a4f62191.mockapi.io
