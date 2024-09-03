@@ -1,7 +1,6 @@
 package db
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/golang-migrate/migrate/v4"
@@ -10,7 +9,6 @@ import (
 )
 
 func Migrate(dbUrl string) {
-	fmt.Println(dbUrl)
 	m, err := migrate.New(
 		"file://db/migrations",
 		dbUrl)

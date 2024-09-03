@@ -10,6 +10,7 @@ import (
 type BankRepository interface {
 	ValidateAccount(ctx context.Context, account bank.Account) (*bank.Account, error)
 	Transfer(ctx context.Context, transaction *transaction.Transaction) error
+	SaveAccount(ctx context.Context, account bank.Account) (*bank.Account, error)
 }
 
 type bankRepository struct {

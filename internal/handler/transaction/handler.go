@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/mnfirdauss/Brick/api"
 	transactionEntity "github.com/mnfirdauss/Brick/internal/entity/transaction"
 	transactionUsecase "github.com/mnfirdauss/Brick/internal/usecase/transaction"
 )
@@ -26,12 +27,14 @@ func (h *transactionHandler) GetTransactionByID(w http.ResponseWriter, r *http.R
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
 
+	w.Header().Set("Content-Type", "application/json")
+
 	vars := mux.Vars(r)
 	transactionID := vars["id"]
 
 	transaction, err := h.transactionUsecase.GetTransferByID(ctx, transactionID)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		api.WriteError(w, http.StatusInternalServerError, err)
 		return
 	}
 
@@ -42,16 +45,18 @@ func (h *transactionHandler) Transfer(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
 
+	w.Header().Set("Content-Type", "application/json")
+
 	var req transactionEntity.Transaction
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "Invalid request payload", http.StatusBadRequest)
+		api.WriteError(w, http.StatusBadRequest, err)
 		return
 	}
 
 	transaction, err := h.transactionUsecase.Transfer(ctx, req)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		api.WriteError(w, http.StatusInternalServerError, err)
 		return
 	}
 
@@ -62,16 +67,18 @@ func (h *transactionHandler) Callback(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
 
+	w.Header().Set("Content-Type", "application/json")
+
 	var req transactionEntity.Transaction
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "Invalid request payload", http.StatusBadRequest)
+		api.WriteError(w, http.StatusBadRequest, err)
 		return
 	}
 
 	transaction, err := h.transactionUsecase.Callback(ctx, req)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		api.WriteError(w, http.StatusInternalServerError, err)
 		return
 	}
 

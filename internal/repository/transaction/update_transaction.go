@@ -9,7 +9,7 @@ import (
 
 func (r *transactiontRepository) UpdateTransaction(ctx context.Context, transaction *transaction.Transaction) (*transaction.Transaction, error) {
 	query := `
-        UPDATE transfers 
+        UPDATE transactions 
         SET status = $1, updated_at = $2
         WHERE id = $3;
     `

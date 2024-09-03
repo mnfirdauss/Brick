@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -35,15 +36,16 @@ func (r *bankRepository) ValidateAccount(ctx context.Context, account bank.Accou
 	if response.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("failed to fetch account: %s", response.Status)
 	}
-	type resp struct {
-		Data bank.Account `json:"data"`
-	}
 
-	var responses []resp
+	var responses []bank.Account
 	err = json.NewDecoder(response.Body).Decode(&responses)
 	if err != nil {
 		return nil, err
 	}
 
-	return &responses[0].Data, nil
+	if len(responses) == 0 {
+		return nil, errors.New("account not valid")
+	}
+
+	return &responses[0], nil
 }

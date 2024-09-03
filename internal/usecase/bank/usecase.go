@@ -9,6 +9,7 @@ import (
 
 type BankUseCase interface {
 	ValidateAccount(ctx context.Context, payload bank.Account) (*bank.Account, error)
+	AddAccount(ctx context.Context, payload bank.Account) (*bank.Account, error)
 }
 
 type bankUseCase struct {
