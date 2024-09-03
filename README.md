@@ -20,25 +20,25 @@
 
 * **Body**
 
-	```
-		{
-			"account_name": "daus",
-			"account_number": 12345,
-			"bank_name": "bsi"
-		}
-	```
+```
+{
+	"account_name": "daus",
+	"account_number": 12345,
+	"bank_name": "bsi"
+}
+```
 
 * **Success Response:**
 
   * **Code:** 200
     **Content:**
-	```
-		{
-			"account_number": 12345,
-			"account_name": "daus",
-			"bank_name": "bsi"
-		}
-	```
+```
+{
+	"account_number": 12345,
+	"account_name": "daus",
+	"bank_name": "bsi"
+}
+```
  
 ------------------
 **Validate Account**
@@ -55,26 +55,26 @@
 
 * **Body**
 
-  ```
-		{
-      "account_name": "daus",
-      "account_number": 12345,
-      "bank_name": "bsi"
-    }
-	```
+```
+{
+	"account_name": "daus",
+	"account_number": 12345,
+	"bank_name": "bsi"
+}
+```
 
 
 * **Success Response:**
 
   * **Code:** 200 OK
     **Content:**
-	```
-	  {
-      "account_name": "daus",
-      "account_number": 12345,
-      "bank_name": "bsi"
-    }
-	```
+```
+{
+	"account_name": "daus",
+	"account_number": 12345,
+	"bank_name": "bsi"
+}
+```
 
 ------------------
 **Send Money**
@@ -91,45 +91,45 @@
 
 * **Body**
 
-  ```
-  {
-    "source_account": {
-        "account_name": "daus",
-        "account_number": 12345,
-        "bank_name": "mandiri"
-    },
-    "destination_account": {
-        "account_name": "daus",
-        "account_number": 12345,
-        "bank_name": "bsi"
-    },
-    "amount": 1000
-  }
-  ```
+```
+{
+	"source_account": {
+			"account_name": "daus",
+			"account_number": 12345,
+			"bank_name": "mandiri"
+	},
+	"destination_account": {
+			"account_name": "daus",
+			"account_number": 12345,
+			"bank_name": "bsi"
+	},
+	"amount": 1000
+}
+```
 
 * **Success Response:**
 
   * **Code:** 200 OK
     **Content:**
-	 	```
-	 	{
-      "id": "31712f3b-2497-499c-ae84-60a51f4a28d6",
-      "source_account": {
-          "account_number": 12345,
-          "account_name": "daus",
-          "bank_name": "mandiri"
-      },
-      "destination_account": {
-          "account_number": 12345,
-          "account_name": "daus",
-          "bank_name": "bsi"
-      },
-      "amount": 1000,
-      "status": "PENDING",
-      "created_at": "2024-09-03T08:11:17.669204Z",
-      "updated_at": "2024-09-03T08:11:17.669205Z"
-    }
-		```
+```
+{
+	"id": "31712f3b-2497-499c-ae84-60a51f4a28d6",
+	"source_account": {
+			"account_number": 12345,
+			"account_name": "daus",
+			"bank_name": "mandiri"
+	},
+	"destination_account": {
+			"account_number": 12345,
+			"account_name": "daus",
+			"bank_name": "bsi"
+	},
+	"amount": 1000,
+	"status": "PENDING",
+	"created_at": "2024-09-03T08:11:17.669204Z",
+	"updated_at": "2024-09-03T08:11:17.669205Z"
+}
+```
 
 ------------------
 **Callback Transaction**
@@ -146,12 +146,12 @@
 
 * **Body**
 
-  ```
-		{
-       "id": "31712f3b-2497-499c-ae84-60a51f4a28d6",
-       "status": "SUCCESS"
-    }
-	```
+```
+{
+	 "id": "31712f3b-2497-499c-ae84-60a51f4a28d6",
+	 "status": "SUCCESS"
+}
+```
 
 * **Success Response:**
 
