@@ -20,13 +20,13 @@
 
 * **Body**
 
-  `
+  ```
 		{
       "account_name": "daus",
       "account_number": 12345,
       "bank_name": "bsi"
     }
-	`
+	```
 
 * **Success Response:**
 
@@ -55,20 +55,20 @@
 
 * **Body**
 
-  `
+  ```
 		{
       "account_name": "daus",
       "account_number": 12345,
       "bank_name": "bsi"
     }
-	`
+	```
 
 
 * **Success Response:**
 
   * **Code:** 200 OK
     **Content:**
-	  ```json
+	```
 	  {
       "account_name": "daus",
       "account_number": 12345,
