@@ -20,19 +20,19 @@
 
 * **Body**
 
-  ```
-		{
-      "account_name": "daus",
-      "account_number": 12345,
-      "bank_name": "bsi"
-    }
+	```
+	{
+		"account_name": "daus",
+		"account_number": 12345,
+		"bank_name": "bsi"
+	}
 	```
 
 * **Success Response:**
 
   * **Code:** 200
     **Content:**
-		```json
+		```
 		{
       "account_number": 12345,
       "account_name": "daus",
@@ -91,7 +91,7 @@
 
 * **Body**
 
-  `
+  ```
   {
     "source_account": {
         "account_name": "daus",
@@ -105,13 +105,13 @@
     },
     "amount": 1000
   }
-  `
+  ```
 
 * **Success Response:**
 
   * **Code:** 200 OK
     **Content:**
-	 	```json
+	 	```
 	 	{
       "id": "31712f3b-2497-499c-ae84-60a51f4a28d6",
       "source_account": {
@@ -146,18 +146,18 @@
 
 * **Body**
 
-  `
+  ```
 		{
        "id": "31712f3b-2497-499c-ae84-60a51f4a28d6",
        "status": "SUCCESS"
     }
-	`
+	```
 
 * **Success Response:**
 
   * **Code:** 200 OK
     **Content:**
-	 	```json
+	 	```
 	 	{
         "id": "31712f3b-2497-499c-ae84-60a51f4a28d6",
         "source_account": {
