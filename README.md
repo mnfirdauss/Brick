@@ -21,24 +21,24 @@
 * **Body**
 
 	```
-	{
-		"account_name": "daus",
-		"account_number": 12345,
-		"bank_name": "bsi"
-	}
+		{
+			"account_name": "daus",
+			"account_number": 12345,
+			"bank_name": "bsi"
+		}
 	```
 
 * **Success Response:**
 
   * **Code:** 200
     **Content:**
-		```
+	```
 		{
-      "account_number": 12345,
-      "account_name": "daus",
-      "bank_name": "bsi"
-    }
-		```
+			"account_number": 12345,
+			"account_name": "daus",
+			"bank_name": "bsi"
+		}
+	```
  
 ------------------
 **Validate Account**
@@ -74,7 +74,7 @@
       "account_number": 12345,
       "bank_name": "bsi"
     }
-		```
+	```
 
 ------------------
 **Send Money**
